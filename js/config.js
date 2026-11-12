@@ -23,7 +23,7 @@ const CONFIG = {
   backgroundVideo:  "assets/background.mp4",
   customCursor:     "assets/cursor.png",      // "" for the normal cursor
 
-  backgroundVideoOnIOS: false,                  // false = iPhone/iPad show no video
+  backgroundVideoOnIOS: true,                  // false = iPhone/iPad show no video
   backgroundImage:  "assets/background.Webp",    // "" for none — GIF/WebP/JPG, used when the video is off
 
   // ----------------------------------------------------------
