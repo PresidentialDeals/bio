@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@hiffs</title>
+    <link rel="icon" href="https://cdn.xoa.me/uploads/b2351f54-c3b0-4e64-a75c-32d03dee9c83.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=VT323&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+
+    <!-- Entry screen -->
+    <div id="entry-screen">
+      <div id="entry-text">[ Click To Open ]</div>
+    </div>
+
+    <!-- Background video -->
+    <video id="bg-video" muted loop playsinline autoplay></video>
+
+    <!-- Snowfall effect -->
+    <canvas id="snow-canvas"></canvas>
+
+    <!-- Volume button -->
+    <button id="volume-btn" aria-label="Toggle sound">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M3 10v4h4l5 4V6L7 10H3zm13.5 2a4.5 4.5 0 0 0-2.5-4v8a4.5 4.5 0 0 0 2.5-4zM14 3.2v2.1a7 7 0 0 1 0 13.4v2.1a9 9 0 0 0 0-17.6z"/></svg>
+    </button>
+
+    <!-- Profile card -->
+    <main id="page">
+      <div id="card">
+
+        <!-- Views -->
+        <div id="views">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+          <span id="views-count"></span>
+        </div>
+
+        <!-- Header: avatar + name + badges + location -->
+        <div id="header">
+          <div id="avatar-wrap">
+            <img id="avatar" src="" alt="avatar" />
+            <img id="avatar-decoration" src="" alt="" />
+          </div>
+
+          <div id="header-info">
+            <div class="name-holder">
+              <h1 id="name"><span id="name-inner"></span></h1>
+              <span class="tooltip" id="name-tooltip"></span>
+            </div>
+            <div id="badges"></div>
+            <div id="location">
+              <svg viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/></svg>
+              <span id="location-text"></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bio -->
+        <div id="bio"></div>
+
+        <!-- Tag pills -->
+        <div id="tags"></div>
+
+        <!-- Social links -->
+        <div id="links"></div>
+
+        <!-- Music player -->
+        <div id="player">
+          <div id="track-cover-wrap">
+            <img id="track-cover" src="" alt="cover" />
+          </div>
+          <div id="track-info">
+            <div id="track-text">
+              <a id="track-title" href="#" target="_blank" rel="noopener"></a>
+              <span id="track-artist"></span>
+            </div>
+            <div id="track-progress-row">
+              <span id="time-current">0:00</span>
+              <div id="progress">
+                <div id="progress-fill"></div>
+              </div>
+              <span id="time-total">0:00</span>
+            </div>
+            <div id="controls">
+              <button id="prev-btn" aria-label="Previous track">
+                <svg viewBox="0 0 512 512"><path fill="currentColor" d="M170.7 256L448 448V64L170.7 256zM64 64h64v384H64z"/></svg>
+              </button>
+              <button id="play-btn" aria-label="Play track">
+                <svg id="play-icon" viewBox="0 0 448 512"><path fill="currentColor" d="M424.4 214.7L72.4 6.6C43.8-10.3 0 6.1 0 47.9V464c0 37.5 40.7 60.1 72.4 41.3l352-208c31.4-18.5 31.5-64.1 0-82.6z"/></svg>
+                <svg id="pause-icon" viewBox="0 0 448 512" style="display:none"><path fill="currentColor" d="M144 479H48c-26.5 0-48-21.5-48-48V79c0-26.5 21.5-48 48-48h96c26.5 0 48 21.5 48 48v352c0 26.5-21.5 48-48 48zm304-48V79c0-26.5-21.5-48-48-48h-96c-26.5 0-48 21.5-48 48v352c0 26.5 21.5 48 48 48h96c26.5 0 48-21.5 48-48z"/></svg>
+              </button>
+              <button id="next-btn" aria-label="Next track">
+                <svg viewBox="0 0 512 512"><path fill="currentColor" d="M64 64v384l277.3-192L64 64zM384 64h64v384h-64z"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </main>
+
+    <!-- Cursor trail -->
+    <canvas id="cursor-canvas"></canvas>
+
+    <audio id="audio" loop></audio>
+
+    <script src="js/config.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>
