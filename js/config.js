@@ -9,7 +9,7 @@ const CONFIG = {
   // IDENTITY
   // ----------------------------------------------------------
   username:     "Monkey",          // name on the card
-  nameTooltip:  "🙈🙉🙊", // shown on hover over the name
+  nameTooltip:  "🙈🙉🙊", // shown on hover over the name 
   tabTitle:     "@Chango says hi",         // browser tab text
   entryText:    "[ @Monkey ]",// text on the entry screen
   views:        "4.9K",            // view counter, top-right
@@ -24,7 +24,7 @@ const CONFIG = {
   customCursor:     "assets/cursor.png",      // "" for the normal cursor
 
   backgroundVideoOnIOS: true,                  // false = iPhone/iPad show no video
-  backgroundImage:  "assets/background.Webp",    // "" for none — GIF/WebP/JPG, used when the video is off
+  backgroundImage:  "assets/background.webp",    // "" for none — GIF/WebP/JPG, used when the video is off
 
   // ----------------------------------------------------------
   // BIO — leave "" for no bio line
