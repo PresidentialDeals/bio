@@ -178,7 +178,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   video.addEventListener("error", tryNextVideo);
   video.addEventListener("playing", () => { video.style.display = ""; });
-
+  const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) ||
+                (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+  const useVideo = !!wantedVideo && !(isIOS && CONFIG.backgroundVideoOnIOS !== true);
     if (useVideo) {
     video.src = wantedVideo;
     playVideo();
