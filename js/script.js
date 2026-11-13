@@ -545,10 +545,25 @@ function initLogoRain() {
     requestAnimationFrame(draw);
   }
 
+/* ===== START: resize guard (replaces the old one-line resize listener) ===== */
   resize();
   create();
-  addEventListener("resize", () => { resize(); create(); });
+
+  // iPhone Safari hides and shows its toolbar while you scroll, which fires
+  // "resize" with a different height. Rebuilding the whole field on that
+  // made the logos jump around mid-scroll, so only a real width change
+  // (rotation, desktop window) starts a fresh field.
+  addEventListener("resize", () => {
+    const widthChanged = Math.abs(innerWidth - canvas.width) > 8;
+    const heightChanged = Math.abs(innerHeight - canvas.height) > 120;
+    if (!widthChanged && !heightChanged) return;
+
+    resize();
+    if (widthChanged) create();
+  });
+
   requestAnimationFrame(draw);
+/* ===== END ===== */
 }
 
 
