@@ -107,6 +107,29 @@
 
     <audio id="audio" loop></audio>
 
+    <!-- Safety net: the entry screen must always open, even if js/script.js
+         fails to load or throws. Runs before the other scripts on purpose. -->
+    <script>
+      (function () {
+        var screen = document.getElementById("entry-screen");
+        if (!screen) return;
+        var open = function () {
+          screen.classList.add("hidden");
+          var card = document.getElementById("card");
+          if (card) {
+            card.classList.add("revealed");
+            card.style.transform = "translateY(0)";
+          }
+        };
+        ["click", "pointerdown", "touchstart"].forEach(function (evt) {
+          screen.addEventListener(evt, open, { passive: true });
+        });
+        // and open by itself, so a phone that swallows the tap can never
+        // leave the page stuck on this screen
+        setTimeout(open, 2500);
+      })();
+    </script>
+
     <script src="js/config.js"></script>
     <script src="js/script.js"></script>
     <script>
